@@ -1,3 +1,21 @@
-<div>
-  <%= @text %>
+<div class="joke__component">
+  <style>
+    .joke__component {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <% if loading? %>
+    <%= render LoaderComponent.new %>
+  <% else %>
+    <div>
+      <%= joke.setup %>
+    </div>
+    <div>
+      <%= joke.punchline %>
+    </div>
+  <% end %>
 </div>
