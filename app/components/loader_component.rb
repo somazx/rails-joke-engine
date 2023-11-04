@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-class LoaderComponent < ViewComponent::Base
+class LoaderComponent < ApplicationComponent
 
 end

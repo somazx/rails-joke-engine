@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ 
+.joke__component {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
