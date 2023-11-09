@@ -68,3 +68,9 @@ group :test do
 end
 
 gem "view_component", "~> 3.7"
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "sentry-ruby", "~> 5.12"
+
+gem "sentry-rails", "~> 5.12"
