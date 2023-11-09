@@ -1,14 +1,9 @@
 # frozen_string_literal: true
 
 class JokeComponent < ApplicationComponent
-  attr_accessor :joke, :loading
+  attr_accessor :joke
 
-  def initialize(joke: nil, loading: true)
+  def initialize(joke: nil)
     @joke = joke
-    @loading = loading
-  end
-
-  def loading?
-    @loading
   end
 end

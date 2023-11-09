@@ -3,13 +3,15 @@ class JokesController < ApplicationController
   def show
     respond_to do |format|
       format.html do
-        render ::JokeComponent.new()
+        render ::AsyncLoadComponent.new(
+          src: joke_path(format: :turbo_stream),
+          frame_id: :joke__component
+        )
       end
 
       format.turbo_stream do
         joke = JokeApi.get_random
-        loading = false
-        @joke_component = ::JokeComponent.new(joke:, loading:)
+        @joke_component = ::JokeComponent.new(joke:)
       end
     end
   end

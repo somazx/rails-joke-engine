@@ -14,7 +14,7 @@
  *= require_self
  */
  
-.joke__component {
+body {
   height: 100vh;
   width: 100vw;
   display: flex;

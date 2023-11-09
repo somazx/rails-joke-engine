@@ -3,17 +3,13 @@
 require "test_helper"
 
 class JokeComponentTest < ViewComponent::TestCase
-  def test_component_renders_joke_text
-    joke_text = "Is this a joke?"
-    render_inline JokeComponent.new(text: joke_text, loading: false)
-
-    assert_text(joke_text)
-    refute_selector("svg")
+  def joke
+    Joke.new(type: "Test Joke", setup: "Knock Knock", punchline: "You!", id: :foo)
   end
 
-  def test_component_renders_loading_svg
-    render_inline JokeComponent.new(text: nil, loading: true)
+  def test_component_renders_joke_text
+    render_inline JokeComponent.new(joke:)
 
-    assert_selector("svg")
+    assert_text(joke.setup)
   end
 end

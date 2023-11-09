@@ -1,16 +1,10 @@
 
-<div class="joke__component">
-  <% if loading? %>
-    <%= turbo_frame_tag :joke__component, src: joke_path(format: :turbo_stream), target: "_self" do %>
-      <%= render LoaderComponent.new %>
-    <% end %>
-  <% else %>
-    <div>
-      <%= joke.setup %>
-    </div>
-    <div>
-      <%= joke.punchline %>
-    </div>
-  <% end %>
+<div>
+  <div>
+    <%= joke.setup %>
+  </div>
+  <div>
+    <%= joke.punchline %>
+  </div>
 </div>
 
